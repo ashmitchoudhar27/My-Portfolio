@@ -1,0 +1,242 @@
+/* ── Section wrapper ─────────────────────────────────────────── */
+.projects-section {
+  padding: 6rem 0 4rem;
+  background-color: var(--bg-color);
+  overflow: hidden;          /* clip the horizontal track */
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.projects-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+}
+
+.projects-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.projects-title {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: #fff;
+  line-height: 1;
+}
+
+.scroll-hint {
+  font-size: 0.85rem;
+  color: #3b82f6;
+  letter-spacing: 1px;
+  font-weight: 500;
+  padding-bottom: 0.8rem;
+}
+
+/* ── Horizontal scrollable track ─────────────────────────────── */
+.projects-track-wrapper {
+  padding: 0 5%;           /* same side-padding as .container */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  scrollbar-width: none;   /* Firefox */
+}
+
+.projects-track-wrapper::-webkit-scrollbar { display: none; }
+
+.projects-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  padding-bottom: 1.5rem;
+}
+
+/* ── Single card ─────────────────────────────────────────────── */
+.project-card {
+  position: relative;
+  width: 330px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+
+  /* transition for hover */
+  transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* ── Hover animation ─────────────────────────────────────────── */
+.project-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(59, 130, 246, 0.15);
+}
+
+/* Animated glowing accent line at the top */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Subtle inner glow that reveals on hover */
+.card-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.08) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.project-card:hover .card-glow {
+  opacity: 1;
+}
+
+/* ── Card internals ──────────────────────────────────────────── */
+.pc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.pc-category {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+}
+
+.pc-stars {
+  font-size: 0.8rem;
+  color: #a1a1aa;
+}
+
+.pc-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .pc-title {
+  color: #e0eaff;
+}
+
+.pc-desc {
+  font-size: 0.9rem;
+  color: #71717a;
+  line-height: 1.7;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .pc-desc {
+  color: #a1a1aa;
+}
+
+/* Tech tags */
+.pc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.pc-tag {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.project-card:hover .pc-tag {
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+}
+
+/* Footer link */
+.pc-footer {
+  margin-top: auto;
+}
+
+.pc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3b82f6;
+  transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.pc-link:hover {
+  gap: 0.7rem;
+  color: #93c5fd;
+}
+
+.arrow-icon {
+  font-size: 0.75rem;
+  transition: transform 0.25s ease;
+}
+
+.pc-link:hover .arrow-icon {
+  transform: translateX(3px);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .projects-title {
+    font-size: 3.5rem;
+  }
+  .project-card {
+    width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 2.8rem;
+  }
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
