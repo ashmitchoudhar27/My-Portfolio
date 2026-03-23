@@ -11,7 +11,7 @@ const Footer = () => {
       backdropFilter: 'blur(10px)'
     }}>
       <p style={{ color: 'var(--text-muted)' }}>
-        Designed and Built with <FaHeart style={{ color: 'var(--primary)', margin: '0 5px' }} /> by Ashmit Choudhary © {new Date().getFullYear()}
+        Designed and Built by Ashmit Choudhary © {new Date().getFullYear()}
       </p>
     </footer>
   );
