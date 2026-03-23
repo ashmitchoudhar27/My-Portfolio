@@ -34,6 +34,14 @@ const Hero = () => {
 
         <div className="hero-cta fade-in-up" style={{ animationDelay: '0.4s' }}>
           <a href="#projects" className="btn view-work-btn">View work</a>
+          <a
+            href="https://drive.google.com/file/d/1GgInjw77_wZb9Sv1K7mvVgqUZzTypvne/view?usp=drive_link"
+            target="_blank"
+            rel="noreferrer"
+            className="btn view-cv-btn"
+          >
+            View CV
+          </a>
         </div>
 
       </div>

@@ -8,12 +8,14 @@
   align-items: center;
   z-index: 1000;
   transition: var(--transition);
-  background: transparent;
+  background: var(--bg-color);
 }
 
 .navbar.scrolled {
   height: 70px;
-  background: var(--glass-bg);
+  background: rgba(9, 9, 11, 0.92); /* solid dark with slight transparency for the blur */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--glass-border);
 }
 

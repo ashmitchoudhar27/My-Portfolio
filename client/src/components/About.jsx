@@ -54,11 +54,11 @@ const About = () => {
 
           <div className="stats-container">
             <div className="stat-item">
-              <h3>29</h3>
+              <h3>10+</h3>
               <p>GitHub Repos</p>
             </div>
             <div className="stat-item">
-              <h3>80+<span className="star-icon">★</span></h3>
+              <h3>20+<span className="star-icon">★</span></h3>
               <p>Total Stars</p>
             </div>
             <div className="stat-item">
