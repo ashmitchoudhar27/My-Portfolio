@@ -1,0 +1,32 @@
+﻿
+
+    Directory: C:\Users\ja
+    tmo\.gemini\antigravit
+    y\brain\328b88bd-590d-
+    4604-a9e4-ed6c0c2762e7
+
+
+Mode         LastWriteTime
+----         -------------
+-a----     03-04-2026     
+                     21:19
+
+
+    Directory: C:\Users\ja
+    tmo\.gemini\antigravit
+    y\brain\beab54be-c616-
+    4ae7-9462-65e56129ddbc
+
+
+Mode         LastWriteTime
+----         -------------
+-a----     29-03-2026     
+                     03:30
+-a----     29-03-2026     
+                     03:23
+-a----     29-03-2026     
+                     03:17
+-a----     29-03-2026     
+                     03:08
+
+
